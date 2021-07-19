@@ -5,6 +5,7 @@ from .Library.AliveShow import Alive
 from .Library.EngageShow import Engage
 from .Library.GlanceShow import Glance
 from .Library.AcknowledgeShow import Acknowledge
+from .Library.TrackingShow import Tracking
 #  param
 
 class BehaviorManager:
@@ -19,6 +20,7 @@ class BehaviorManager:
         self.Engage = Engage()
         self.Glance = Glance()
         self.Acknowledge = Acknowledge()
+        self.Tracking = Tracking()
         # init state
         self.state = self.Read
         pass
@@ -29,6 +31,10 @@ class BehaviorManager:
 
     def updateState(self):
         pass
+        
+    def selectState(self, state):
+        if state == "tracking":
+            self.state = self.Tracking
 
     def updateParam(self):
         self.state.update()

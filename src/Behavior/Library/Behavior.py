@@ -6,7 +6,7 @@ class Behavior(metaclass=ABCMeta):
 
     @abstractmethod
     def getEyeAngle(self):
-        return 0
+        pass
 
     @abstractmethod
     def update(self):
