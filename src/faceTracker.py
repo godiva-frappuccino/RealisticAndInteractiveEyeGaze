@@ -31,9 +31,9 @@ def main():
         rect = rects[0] if len(rects) > 0 else None # select human 0
         eyeAngle = behaviorManager.Tracking.trackHuman(frame=frame, rect=rect)
         # send to Server
-        client.send("Eye", eyeAngle)
+        client.sendEyeRotation(eyeAngle)
 
-        time.sleep(0.1)
+        time.sleep(0.05)
 
 
 
